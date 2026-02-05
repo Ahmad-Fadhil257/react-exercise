@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Pakai titik untuk Class */
+      .ukuran { 
+        width: auto; /* Biar melebar sesuai angka */
+        min-width: 100px;
+        height: auto;
+        font-size: 24px;
+        transition: 0.2s;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="nomer" class="ukuran">0</button>
+    <button id="asep" class="ukuran">0</button>
+
+<script>
+  const identify = document.getElementById("nomer");
+  const hmm = document.getElementById("asep");
+
+  let angkaCounter = 0;
+  let ukuranFont = 24;
+
+  // Kita buat satu fungsi saja supaya bisa dipakai bareng-bareng
+  function reaksiSentuh() {
+    angkaCounter++;
+    
+    // 'this' artinya: tombol mana yang lagi disentuh, itu yang dirubah
+    this.innerHTML = angkaCounter;
+
+    ukuranFont += 3;
+    this.style.fontSize = ukuranFont + "px";
+    
+    // Warna teks acak
+    const warnaTeks = Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+    this.style.color = "#" + warnaTeks;
+    
+    // Warna BG acak (Pakai HSL agar selalu terang seperti maumu tadi)
+    const hue = Math.floor(Math.random() * 360);
+    this.style.backgroundColor = `hsl(${hue}, 100%, 70%)`;
+  }
+
+  // Pasang fungsinya ke masing-masing tombol
+  identify.addEventListener("mouseenter", reaksiSentuh);
+  hmm.addEventListener("mouseenter", reaksiSentuh);
+</script>
+  </body>
+</html>
