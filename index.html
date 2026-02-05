@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="app"></button>
+</body>
+
+<footer id="kaki"></footer>
+
+<script type="text/javascript">
+  const app = document.getElementById('app')
+  const heading = document.createElement('h1')
+  const headerContent = document.createTextNode("Belajar React Bareng WPU 🚀")
+
+  heading.appendChild(headerContent)
+  app.appendChild(heading) 
+
+ const kaki = document.getElementById('kaki')
+  const pembesarKaki = document.createElement('h2')
+  const footerContent = document.createTextNode(`Copyright ${String.fromCharCode(169)} 2024`)
+
+  pembesarKaki.appendChild(footerContent)
+  kaki.appendChild(pembesarKaki)
+</script>
+</html>
